@@ -32,9 +32,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-              <main>
-                {children}
-              </main>
+          <div className="max-w-7xl mx-auto px-4 flex">
+            <AppSidebar />
+            <main className="w-full w-5/7">
+              <div className="">{children}</div>
+            </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
