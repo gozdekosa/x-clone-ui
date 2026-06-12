@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/components/layout/Sidebar";
 import RightSidebar from "@/components/layout/RightSidebar";
+import Main from "@/components/layout/Main";
 
 export default function Home() {
   return (
@@ -13,8 +14,8 @@ export default function Home() {
         </aside>
 
         {/* Center Feed */}
-        <main className="min-h-screen flex-1 px-4">
-          mainnnnnnn
+        <main className="min-h-screen flex-1">
+          <Main />
         </main>
 
         {/* Right Sidebar */}

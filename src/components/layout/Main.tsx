@@ -1,0 +1,96 @@
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import { Input } from "../ui/input";
+import { Avatar, AvatarImage } from "../ui/avatar";
+import { ArrowUpFromLine, Bookmark, ChartNoAxesColumnIncreasing, Heart, MessageCircle, Repeat2 } from "lucide-react";
+
+const Main = () => {
+  return (
+    <Tabs defaultValue="overview" className="w-full">
+        <div className="sticky top-0 z-10 h-11 bg-background">
+            <TabsList className="w-full grid grid-cols-2" variant="line">
+            <TabsTrigger value="overview" className="font-bold rounded-none p-4">
+                For you
+            </TabsTrigger>
+            <TabsTrigger value="analytics" className="rounded-none p-4">
+                Following
+            </TabsTrigger>
+            </TabsList>
+        </div>
+
+        <TabsContent value="overview" className="pt-4">
+            <div>
+            <Input
+                placeholder="What's happining?"
+                className="rounded-none h-40"
+            />
+            </div>
+
+            <div className="flex px-5 py-3 border-b border-neutral-900 hover:cursor-pointer hover:bg-neutral-950">
+            <div className="profile-img">
+                <Avatar className="w-10 h-10">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                </Avatar>
+            </div>
+
+            <div className="pl-3">
+                <div className="pb-2">
+                <p className="font-bold text-md">
+                    düz tekir{" "}
+                    <span className="font-light dark:text-neutral-400 text-neutral-900">
+                    @karapatililer · Jun 11
+                    </span>
+                </p>
+                </div>
+
+                <div>
+                <p>
+                    Marketteki kedi beni mama reyonuna goturup mama aldirdi. Kasada kediyle
+                    beraber beklerken, kasiyer kediyi gostererek "onun icin aliyorsaniz
+                    mamasi var kapida, yalan soyluyor" dedi. Kedinin kasiyere nasil baktigini
+                    gormeliydiniz. Kediler ahlakimizi taklit etmeye baslamis 😄
+                </p>
+                </div>
+
+                <div className="flex justify-between pt-5 pb-1">
+                <div className="flex items-center gap-1 text-neutral-400">
+                    <MessageCircle className="w-4.5 h-4.5" />
+                    <span className="text-xs">38</span>
+                </div>
+
+                <div className="flex items-center gap-1 text-neutral-400">
+                    <Repeat2 className="w-4.5 h-4.5" />
+                    <span className="text-xs">397</span>
+                </div>
+
+                <div className="flex items-center gap-1 text-neutral-400">
+                    <Heart className="w-4.5 h-4.5" />
+                    <span className="text-xs">30K</span>
+                </div>
+
+                <div className="flex items-center gap-1 text-neutral-400">
+                    <ChartNoAxesColumnIncreasing className="w-4.5 h-4.5" />
+                    <span className="text-xs">360K</span>
+                </div>
+
+                <div className="flex space-x-3">
+                    <Bookmark className="w-4.5 h-4.5 text-neutral-400" />
+                    <ArrowUpFromLine className="w-4.5 h-4.5 text-neutral-400" />
+                </div>
+                </div>
+            </div>
+            </div>
+        </TabsContent>
+
+        <TabsContent value="analytics">
+            <p>tab2</p>
+        </TabsContent>
+    </Tabs>
+    );
+}
+
+export default Main;

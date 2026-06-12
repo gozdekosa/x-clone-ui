@@ -23,7 +23,7 @@ export function AppSidebar() {
 
   return (
     <div className='h-screen flex flex-col justify-between'>
-        <div><XIcon className="text-black dark:text-white" /></div>
+        <div className="mt-5"><XIcon className="text-black dark:text-white" /></div>
         <div className="space-y-6 pr-4">
             <ul className="space-y-7">
                 <li className="flex"><Home/><span className="ml-4 text-xl"> Home</span></li>
@@ -43,7 +43,7 @@ export function AppSidebar() {
         <div className="flex items-center pb-3">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                <div className="flex items-center w-full cursor-pointer">
+                <div className="flex items-center w-full cursor-pointer pb-3">
                     <Avatar>
                     <AvatarImage src="https://github.com/shadcn.png" />
                     </Avatar>
