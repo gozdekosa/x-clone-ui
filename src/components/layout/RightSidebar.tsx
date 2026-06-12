@@ -13,7 +13,7 @@ import Link from "next/link";
 const RightSidebar = () => {
   return (
     <div className="">
-        <div className="fixed top-0 z-10 w-[calc(350px-2rem)]">
+        <div className="fixed top-1 z-10 w-[calc(350px-2rem)]">
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
             <Input
