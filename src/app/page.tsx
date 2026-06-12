@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen">
       <div className="mx-auto flex max-w-7xl">
         {/* Left Sidebar */}
-        <aside className="w-[275px]">
+        <aside className="hidden md:block w-[275px]">
           <div className="fixed top-0 h-screen w-[275px] border-r border-neutral-900 px-4">
             <AppSidebar />
           </div>
@@ -19,7 +19,7 @@ export default function Home() {
         </main>
 
         {/* Right Sidebar */}
-        <aside className="w-[350px] border-l border-neutral-900 px-4">
+        <aside className="hidden md:block w-[350px] border-l border-neutral-900 px-4">
           <RightSidebar />
         </aside>
       </div>
