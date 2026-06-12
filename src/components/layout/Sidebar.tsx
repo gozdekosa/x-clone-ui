@@ -10,20 +10,19 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function AppSidebar() {
-    const XIcon = () => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        className="w-8 h-8"
-    >
-        <path d="M18.244 2H21l-6.52 7.46L22 22h-6.827l-5.35-6.993L3.7 22H1l7.02-8.03L2 2h6.93l4.86 6.41L18.244 2Zm-1.2 18h1.87L7.07 3.9H5.07L17.044 20Z"/>
-    </svg>
-);
 
   return (
     <div className='h-screen flex flex-col justify-between'>
-        <div className="mt-4 px-4"><XIcon className="text-black dark:text-white" /></div>
+        <div className="mt-4 px-4">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-8 h-8 text-black dark:text-white"
+            >
+                <path d="M18.244 2H21l-6.52 7.46L22 22h-6.827l-5.35-6.993L3.7 22H1l7.02-8.03L2 2h6.93l4.86 6.41L18.244 2Zm-1.2 18h1.87L7.07 3.9H5.07L17.044 20Z"/>
+            </svg>
+        </div>
         <div className="pr-4">
             <ul className="space-y-2">
                 <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
