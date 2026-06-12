@@ -23,22 +23,65 @@ export function AppSidebar() {
 
   return (
     <div className='h-screen flex flex-col justify-between'>
-        <div className="mt-5"><XIcon className="text-black dark:text-white" /></div>
-        <div className="space-y-6 pr-4">
-            <ul className="space-y-7">
-                <li className="flex"><Home/><span className="ml-4 text-xl"> Home</span></li>
-                <li className="flex"><Search/><span className="ml-4 text-xl"> Explore</span></li>
-                <li className="flex"><Bell/><span className="ml-4 text-xl"> Notifications</span></li>
-                <li className="flex"><UserPlus/><span className="ml-4 text-xl"> Follow</span></li>
-                <li className="flex"><MessageCircle/><span className="ml-4 text-xl"> Chat</span></li>
-                <li className="flex"><GitFork/><span className="ml-4 text-xl"> Grok</span></li>
-                <li className="flex"><Bookmark /><span className="ml-4 text-xl"> Bookmarks</span></li>
-                <li className="flex"><Rocket/><span className="ml-4 text-xl"> Creator Studio</span></li>
-                <li className="flex"><HandCoins/><span className="ml-4 text-xl"> Premium</span></li>
-                <li className="flex"><UserRound/><span className="ml-4 text-xl"> Profile</span></li>
-                <li className="flex"><CircleEllipsis/><span className="ml-4 text-xl"> More</span></li>
+        <div className="mt-4 px-4"><XIcon className="text-black dark:text-white" /></div>
+        <div className="pr-4">
+            <ul className="space-y-2">
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <Home />
+                    <span className="text-xl">Home</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <Search />
+                    <span className="text-xl">Explore</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <Bell />
+                    <span className="text-xl">Notifications</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <UserPlus />
+                    <span className="text-xl">Follow</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <MessageCircle />
+                    <span className="text-xl">Chat</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <GitFork />
+                    <span className="text-xl">Grok</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <Bookmark />
+                    <span className="text-xl">Bookmarks</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <Rocket />
+                    <span className="text-xl">Creator Studio</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <HandCoins />
+                    <span className="text-xl">Premium</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <UserRound />
+                    <span className="text-xl">Profile</span>
+                </li>
+
+                <li className="flex items-center gap-4 px-4 py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                    <CircleEllipsis />
+                    <span className="text-xl">More</span>
+                </li>
             </ul>
-            <Button className="w-full rounded-4xl text-lg font-bold py-7 cursor-pointer">Post</Button>
+            <Button className="w-full rounded-4xl text-lg font-bold py-7 cursor-pointer mt-1">Post</Button>
         </div>
         <div className="flex items-center pb-3">
             <DropdownMenu>

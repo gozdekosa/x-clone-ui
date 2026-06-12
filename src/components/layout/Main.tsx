@@ -11,18 +11,19 @@ import { ArrowUpFromLine, Bookmark, ChartNoAxesColumnIncreasing, Heart, MessageC
 const Main = () => {
   return (
     <Tabs defaultValue="overview" className="w-full">
-        <div className="sticky top-0 z-10 h-11 bg-background">
-            <TabsList className="w-full grid grid-cols-2" variant="line">
+        <div className="sticky top-0 z-10 h-14 bg-background/60 backdrop-blur-md">
+        <TabsList className="w-full grid grid-cols-2" variant="line">
             <TabsTrigger value="overview" className="font-bold rounded-none p-4">
-                For you
+            For you
             </TabsTrigger>
+
             <TabsTrigger value="analytics" className="rounded-none p-4">
-                Following
+            Following
             </TabsTrigger>
-            </TabsList>
+        </TabsList>
         </div>
 
-        <TabsContent value="overview" className="pt-4">
+        <TabsContent value="overview">
             <div>
             <Input
                 placeholder="What's happining?"
@@ -57,30 +58,42 @@ const Main = () => {
                 </div>
 
                 <div className="flex justify-between pt-5 pb-1">
-                <div className="flex items-center gap-1 text-neutral-400">
-                    <MessageCircle className="w-4.5 h-4.5" />
-                    <span className="text-xs">38</span>
-                </div>
+                    <div className="flex items-center gap-1 text-neutral-400 hover:text-blue-400 group cursor-pointer">
+                        <div className="p-2 rounded-full group-hover:bg-blue-500/10 transition-colors">
+                            <MessageCircle className="w-4.5 h-4.5" />
+                        </div>
+                        <span className="text-xs -ms-2">38</span>
+                    </div>
 
-                <div className="flex items-center gap-1 text-neutral-400">
-                    <Repeat2 className="w-4.5 h-4.5" />
-                    <span className="text-xs">397</span>
-                </div>
+                    <div className="flex items-center gap-1 text-neutral-400 hover:text-green-400 group cursor-pointer">
+                        <div className="p-2 rounded-full group-hover:bg-green-500/10 transition-colors">
+                            <Repeat2 className="w-4.5 h-4.5" />
+                        </div>
+                        <span className="text-xs -ms-2">397</span>
+                    </div>
 
-                <div className="flex items-center gap-1 text-neutral-400">
-                    <Heart className="w-4.5 h-4.5" />
-                    <span className="text-xs">30K</span>
-                </div>
+                    <div className="flex items-center gap-1 text-neutral-400 hover:text-pink-400 group cursor-pointer">
+                        <div className="p-2 rounded-full group-hover:bg-pink-500/10 transition-colors">
+                            <Heart className="w-4.5 h-4.5" />
+                        </div>
+                        <span className="text-xs -ms-2">30K</span>
+                    </div>
 
-                <div className="flex items-center gap-1 text-neutral-400">
-                    <ChartNoAxesColumnIncreasing className="w-4.5 h-4.5" />
-                    <span className="text-xs">360K</span>
-                </div>
+                    <div className="flex items-center gap-1 text-neutral-400 hover:text-blue-400 group cursor-pointer">
+                        <div className="p-2 rounded-full group-hover:bg-blue-500/10 transition-colors">
+                            <ChartNoAxesColumnIncreasing className="w-4.5 h-4.5" />
+                        </div>
+                        <span className="text-xs -ms-2">360K</span>
+                    </div>
 
-                <div className="flex space-x-3">
-                    <Bookmark className="w-4.5 h-4.5 text-neutral-400" />
-                    <ArrowUpFromLine className="w-4.5 h-4.5 text-neutral-400" />
-                </div>
+                    <div className="flex items-center gap-1 text-neutral-400 cursor-pointer">
+                        <div className="p-2 rounded-full hover:bg-blue-500/10 hover:text-blue-400 transition-colors">
+                            <Bookmark className="w-4.5 h-4.5" />
+                        </div>
+                        <div className="p-2 rounded-full hover:bg-blue-500/10 hover:text-blue-400 transition-colors">
+                            <ArrowUpFromLine className="w-4.5 h-4.5" />
+                        </div>
+                    </div>
                 </div>
             </div>
             </div>
