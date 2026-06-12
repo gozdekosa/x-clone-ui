@@ -27,7 +27,7 @@ const Main = () => {
             <div>
             <Input
                 placeholder="What's happining?"
-                className="rounded-none h-40"
+                className="rounded-none h-35"
             />
             </div>
 
