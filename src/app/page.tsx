@@ -1,3 +1,5 @@
+"use client";
+
 import { AppSidebar } from "@/components/layout/Sidebar";
 import RightSidebar from "@/components/layout/RightSidebar";
 import Main from "@/components/layout/Main";

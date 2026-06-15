@@ -26,7 +26,7 @@ const PostCard = ({ post }: PostCardProps) => {
   return (
     <>
     <div
-        key={post.id}
+      key={post.id}
         className="flex px-5 py-3 border-b border-neutral-900 hover:cursor-pointer hover:bg-neutral-950"
     >
         <div className="profile-img">
