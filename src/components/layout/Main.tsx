@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Tabs,
   TabsContent,
@@ -8,8 +10,30 @@ import { Input } from "../ui/input";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import PostCard from "../tweet/PostCard";
 import { posts } from "@/data/posts";
+import { useEffect, useRef, useState } from "react";
 
 const Main = () => {
+  const [visibleCount, setVisibleCount] = useState(10);
+  const loadMoreRef = useRef<HTMLDivElement | null>(null);
+  const visiblePosts = posts.slice(0, visibleCount);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => prev + 10);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Tabs defaultValue="overview" className="w-full">
         <div className="sticky top-0 z-10 md:h-14 h-25 bg-background/60 backdrop-blur-md">
@@ -40,9 +64,17 @@ const Main = () => {
             />
             </div>
 
-            {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+            {visiblePosts.map((post) => (
+              <PostCard key={post.id} post={post} />
             ))}
+
+            <div ref={loadMoreRef} className="h-10 flex items-center justify-center">
+              {visibleCount < posts.length ? (
+                <p className="text-xs text-neutral-500">Loading more...</p>
+              ) : (
+                <p className="text-xs text-neutral-600">No more posts</p>
+              )}
+            </div>
             
         </TabsContent>
 
