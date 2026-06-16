@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppSidebar } from "@/components/layout/Sidebar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import MobileBottomBar from "@/components/layout/MobileBottomBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,6 +42,11 @@ export default function RootLayout({
                           <AppSidebar />
                         </div>
                       </aside>
+
+                      <div className="md-hidden fixed bottom-1 left-0 right-0 bg-white dark:bg-neutral-800 border-t border-neutral-300 dark:border-neutral-700 z-50">
+                        <MobileBottomBar />
+                      </div>
+                      
 
                       {children}
 
