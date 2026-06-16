@@ -1,11 +1,10 @@
 "use client";
 
-import { Avatar, AvatarImage } from "../ui/avatar";
 import { MessageCircle, Repeat2, Heart, ChartNoAxesColumnIncreasing, Bookmark, ArrowUpFromLine } from "lucide-react";
-import { Post } from "@/types/post";
 import { formatPostDate } from "@/lib/formatDate";
-import { useState } from "react";
-import { usePostStore } from "@/store/post-store";
+import { Post } from "../types/post";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { usePostStore } from "../store/post-store";
 
 type PostCardProps = {
   post: Post;
