@@ -25,13 +25,13 @@ export function AppSidebar() {
             </svg>
         </div>
         <div className="">
-            <ul className="space-y-2">
-                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
-                    <Link href="/" className="flex items-center gap-4">
+            <ul className="space-y-2 mb-2">
+                <Link href="/">
+                    <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                         <Home />
                         <span className="text-xl">Home</span>
-                    </Link>
-                </li>
+                    </li>
+                </Link>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Search />
@@ -73,12 +73,14 @@ export function AppSidebar() {
                     <span className="text-xl">Profile</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
-                    <Link href="/settings" className="flex items-center gap-4">
-                    <Settings />
-                    <span className="text-xl">Settings</span>
-                    </Link>
-                </li>
+                <Link href="/settings">
+                    <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
+                        
+                        <Settings />
+                        <span className="text-xl">Settings</span>
+                    
+                    </li>
+                </Link>
             </ul>
             <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2">Post</Button>
         </div>
