@@ -1,3 +1,4 @@
+import MobileSidebar from "@/components/layout/MobileSidebar";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   TabsList,
@@ -9,9 +10,7 @@ const FeedHeader = () => {
 
     <div className="sticky top-0 z-10 md:h-14 h-25 bg-background/60 backdrop-blur-md">
         <div className="md:hidden pt-3 pl-3 flex">
-            <Avatar className="w-7 h-7">
-                <AvatarImage src="https://github.com/shadcn.png" />
-            </Avatar>
+            <MobileSidebar />
             <h5 className="pl-5 font-bold text-lg">Home</h5>
         </div>
         
