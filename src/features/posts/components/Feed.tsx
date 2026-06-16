@@ -5,13 +5,15 @@ import {
   TabsContent,
 } from "@/components/ui/tabs"
 import PostCard from "../components/PostCard";
-import { posts } from "../data/posts";
+import { usePosts } from "../hooks/usePosts";
 import { useInfinitePosts } from "@/features/posts/hooks/useInfinitePosts";
 import FeedHeader from "./FeedHeader";
 import FeedComposer from "./FeedComposer";
+import LoadMore from "./LoadMore";
+import FeedSkeleton from "./FeedSkeleton";
 
 const Feed = () => {
-  
+  const { posts, isLoading } = usePosts();
   const { visibleCount, loadMoreRef } = useInfinitePosts(posts.length);
 
   const visiblePosts = posts.slice(0, visibleCount);
@@ -19,28 +21,28 @@ const Feed = () => {
   return (
     <Tabs defaultValue="overview" className="w-full">
 
-        <FeedHeader />
+      <FeedHeader />
 
-        <TabsContent value="overview">
+      <TabsContent value="overview">
+        {isLoading ? (
+        <FeedSkeleton />
+            ) : (
+            <>
             <FeedComposer />
 
             {visiblePosts.map((post) => (
-              <PostCard key={post.id} post={post} />
+            <PostCard key={post.id} post={post} />
             ))}
 
-            <div ref={loadMoreRef} className="h-10 flex items-center justify-center">
-              {visibleCount < posts.length ? (
-                <p className="text-xs text-neutral-500">Loading more...</p>
-              ) : (
-                <p className="text-xs text-neutral-600">No more posts</p>
-              )}
-            </div>
-            
-        </TabsContent>
+            <LoadMore loadMoreRef={loadMoreRef} visibleCount={visibleCount} posts={posts} />
+            </>
+        )}
+          
+      </TabsContent>
 
-        <TabsContent value="analytics">
-            <p>tab2</p>
-        </TabsContent>
+      <TabsContent value="analytics">
+        <p>tab2</p>
+      </TabsContent>
     </Tabs>
     );
 }
