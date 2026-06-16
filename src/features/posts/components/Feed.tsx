@@ -34,7 +34,11 @@ const Feed = () => {
             <PostCard key={post.id} post={post} />
             ))}
 
-            <LoadMore loadMoreRef={loadMoreRef} visibleCount={visibleCount} posts={posts} />
+            <LoadMore
+              loadMoreRef={loadMoreRef}
+              visibleCount={visibleCount}
+              totalPosts={posts.length}
+            />
             </>
         )}
           

@@ -26,7 +26,7 @@ const PostCard = ({ post }: PostCardProps) => {
     <>
     <div
       key={post.id}
-        className="flex px-5 py-3 border-b border-neutral-900 hover:cursor-pointer hover:bg-neutral-950"
+        className="flex px-5 py-3 border-b dark:border-neutral-900 border-neutral-200 hover:cursor-pointer dark:hover:bg-neutral-950 hover:bg-neutral-100 transition-colors"
     >
         <div className="profile-img">
         <Avatar className="w-10 h-10">
@@ -38,7 +38,7 @@ const PostCard = ({ post }: PostCardProps) => {
         <div className="pb-2">
             <p className="font-bold text-md">
             {post.name}{" "}
-            <span className="font-light text-neutral-400">
+            <span className="font-light dark:text-neutral-400 text-neutral-800">
                 @{post.username} · {formatPostDate(post.createdAt)}
             </span>
             </p>
@@ -49,14 +49,14 @@ const PostCard = ({ post }: PostCardProps) => {
         </div>
 
         <div className="flex justify-between pt-1">
-            <div className="flex items-center gap-1 text-neutral-400 hover:text-blue-400 group cursor-pointer">
+            <div className="flex items-center gap-1 dark:text-neutral-400 text-neutral-800 hover:text-blue-400 group cursor-pointer">
             <div className="p-2 rounded-full group-hover:bg-blue-500/10 transition-colors">
                 <MessageCircle className="w-4.5 h-4.5" />
             </div>
             <span className="text-xs -ms-2">{post.comments}</span>
             </div>
 
-            <div className="flex items-center gap-1 text-neutral-400 hover:text-green-400 group cursor-pointer">
+            <div className="flex items-center gap-1 dark:text-neutral-400 text-neutral-800 hover:text-green-400 group cursor-pointer">
             <div className="p-2 rounded-full group-hover:bg-green-500/10 transition-colors">
                 <Repeat2 className="w-4.5 h-4.5" />
             </div>
@@ -66,7 +66,7 @@ const PostCard = ({ post }: PostCardProps) => {
             <div
               onClick={() => toggleLike(post.id)}
               className={`flex items-center gap-1 group cursor-pointer ${
-                liked ? "text-pink-500" : "text-neutral-400 hover:text-pink-400"
+                liked ? "text-pink-500" : "dark:text-neutral-400 text-neutral-800 hover:text-pink-400"
               }`}
             >
               <div
@@ -88,7 +88,7 @@ const PostCard = ({ post }: PostCardProps) => {
             </span>
             </div>
 
-            <div className="flex items-center gap-1 text-neutral-400 hover:text-blue-400 group cursor-pointer">
+            <div className="flex items-center gap-1 dark:text-neutral-400 text-neutral-800 hover:text-blue-400 group cursor-pointer">
             <div className="p-2 rounded-full group-hover:bg-blue-500/10 transition-colors">
                 <ChartNoAxesColumnIncreasing className="w-4.5 h-4.5" />
             </div>
@@ -99,7 +99,7 @@ const PostCard = ({ post }: PostCardProps) => {
             </span>
             </div>
 
-            <div className="flex items-center gap-1 text-neutral-400 cursor-pointer">
+            <div className="flex items-center gap-1 dark:text-neutral-400 text-neutral-800 cursor-pointer">
               <div
                 onClick={() => toggleBookmark(post.id)}
                 className={`p-2 rounded-full transition-colors ${

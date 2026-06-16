@@ -1,4 +1,4 @@
-import { Bell, Bookmark, CircleEllipsis, Ellipsis, GitFork, HandCoins, Home, MessageCircle, Rocket, Search, UserPlus, UserRound } from "lucide-react";
+import { Bell, Bookmark, Settings, Ellipsis, GitFork, Home, MessageCircle, Rocket, Search, UserPlus, UserRound } from "lucide-react";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "@/components/ui/button"
 import {
@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from "next/link";
 
 export function AppSidebar() {
 
@@ -23,61 +24,60 @@ export function AppSidebar() {
                 <path d="M18.244 2H21l-6.52 7.46L22 22h-6.827l-5.35-6.993L3.7 22H1l7.02-8.03L2 2h6.93l4.86 6.41L18.244 2Zm-1.2 18h1.87L7.07 3.9H5.07L17.044 20Z"/>
             </svg>
         </div>
-        <div className="px-4">
+        <div className="">
             <ul className="space-y-2">
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
-                    <Home />
-                    <span className="text-xl">Home</span>
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
+                    <Link href="/" className="flex items-center gap-4">
+                        <Home />
+                        <span className="text-xl">Home</span>
+                    </Link>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Search />
                     <span className="text-xl">Explore</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Bell />
                     <span className="text-xl">Notifications</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <UserPlus />
                     <span className="text-xl">Follow</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <MessageCircle />
                     <span className="text-xl">Chat</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <GitFork />
                     <span className="text-xl">Grok</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Bookmark />
                     <span className="text-xl">Bookmarks</span>
                 </li>
 
-                <li className="hidden min-[1800px]:flex items-center gap-4 py-3 rounded-full">
+                <li className="hidden min-[1800px]:flex items-center gap-4 py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Rocket />
                     <span className="text-xl">Creator Studio</span>
                 </li>
 
-                <li className="hidden min-[1800px]:flex items-center gap-4 py-3 rounded-full">
-                    <HandCoins />
-                    <span className="text-xl">Premium</span>
-                </li>
-
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <UserRound />
                     <span className="text-xl">Profile</span>
                 </li>
 
-                <li className="flex items-center gap-4  py-3 rounded-full hover:bg-neutral-900 cursor-pointer transition-colors">
-                    <CircleEllipsis />
-                    <span className="text-xl">More</span>
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
+                    <Link href="/settings" className="flex items-center gap-4">
+                    <Settings />
+                    <span className="text-xl">Settings</span>
+                    </Link>
                 </li>
             </ul>
             <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2">Post</Button>

@@ -33,7 +33,19 @@ export default function RootLayout({
             disableTransitionOnChange
           >
               <main>
-                {children}
+                <div className="min-h-screen">
+                  <div className="mx-auto flex max-w-7xl">
+                      {/* Left Sidebar */}
+                      <aside className="hidden md:block w-[275px]">
+                        <div className="fixed top-0 h-screen w-[275px] border-r dark:border-neutral-900 border-neutral-200 px-4">
+                          <AppSidebar />
+                        </div>
+                      </aside>
+
+                      {children}
+
+                  </div>
+                </div>
               </main>
         </ThemeProvider>
       </body>

@@ -17,11 +17,11 @@ const FeedHeader = () => {
         
 
         <TabsList className="w-full grid grid-cols-2" variant="line">
-            <TabsTrigger value="overview" className="font-bold rounded-none p-4">
+            <TabsTrigger value="overview" className="font-bold rounded-none p-4 cursor-pointer">
             For you
             </TabsTrigger>
 
-            <TabsTrigger value="analytics" className="rounded-none p-4">
+            <TabsTrigger value="analytics" className="rounded-none p-4 cursor-pointer">
             Following
             </TabsTrigger>
         </TabsList>
