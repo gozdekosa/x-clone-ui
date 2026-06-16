@@ -1,11 +1,12 @@
 import ThemeToggle from "@/components/layout/ThemeToggle";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, ChevronRight, Search } from "lucide-react";
+import Link from "next/link";
 
 const SettingsPage = () => {
   return (
     <>
-      <main className="min-h-screen flex-1">
+      <main className="min-h-screen flex-1 md:block hidden">
         <div className="p-4">
           <p className="text-xl font-bold">Settings</p>
         </div>
@@ -65,7 +66,7 @@ const SettingsPage = () => {
       {/* Right Sidebar */}
       <aside className="w-[550px] border-l dark:border-neutral-900 border-neutral-200">
         <div className="p-4 flex items-center gap-8">
-          <ArrowLeft/><p className="text-xl font-bold">Display</p>
+          <Link href="/"><ArrowLeft/></Link><p className="text-xl font-bold">Display</p>
         </div>
         <div className="relative w-full px-4">
           <p className="text-xs text-muted-foreground">

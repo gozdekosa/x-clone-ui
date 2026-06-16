@@ -43,9 +43,8 @@ export default function RootLayout({
                         </div>
                       </aside>
 
-                      <div className="md-hidden fixed bottom-1 left-0 right-0 bg-white dark:bg-neutral-800 border-t border-neutral-300 dark:border-neutral-700 z-50">
-                        <MobileBottomBar />
-                      </div>
+                      
+                      <MobileBottomBar />
                       
 
                       {children}
