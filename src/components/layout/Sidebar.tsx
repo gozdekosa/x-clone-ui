@@ -106,12 +106,10 @@ export function AppSidebar() {
 
             </ul>
             <Dialog>
-                <form>
-                    <DialogTrigger asChild>
-                        <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2 md:flex hidden">Post</Button>
-                    </DialogTrigger>
-                    <AddPost />
-                </form>
+                <DialogTrigger asChild>
+                    <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2 md:flex hidden">Post</Button>
+                </DialogTrigger>
+                <AddPost />
             </Dialog>
         </div>
         <div className="flex items-center pb-3 md:block hidden">

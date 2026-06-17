@@ -25,6 +25,9 @@ const AddPost = () => {
           <DialogHeader className="text-end">
             <DialogTitle className="text-emerald-500 font-bold">Drafts</DialogTitle>
           </DialogHeader>
+          <DialogDescription className="sr-only">
+            Post oluşturma modalı
+          </DialogDescription>
           <div>
             <div className="flex gap-2">
                 <div>

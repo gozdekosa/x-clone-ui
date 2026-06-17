@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppSidebar } from "@/components/layout/Sidebar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import MobileBottomBar from "@/components/layout/MobileBottomBar";
+import MobilePostButton from "@/components/layout/MobilePostButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,6 +49,8 @@ export default function RootLayout({
                       
 
                       {children}
+
+                      <MobilePostButton />
 
                   </div>
                 </div>
