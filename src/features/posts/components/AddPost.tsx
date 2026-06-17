@@ -7,9 +7,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import { Field, FieldGroup } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CalendarClock, Circle, CirclePlus, Earth, Flag, Image, ImagePlay, MapPin, Smile, Sparkles, X } from "lucide-react"
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -37,7 +34,7 @@ const AddPost = () => {
                 </div>
                 <Textarea 
                 placeholder="What's happening?" 
-                className="w-full dark:!bg-black border-none !text-lg p-0 h-32 focus-visible:ring-0 resize-none"
+                className="w-full dark:!bg-black border-none !text-lg p-0 h-32 focus-visible:ring-0 resize-none max-w-lg"
                 />
             </div>
             <div className="flex items-center gap-1 mt-4">
