@@ -53,9 +53,9 @@ const FeedComposer = () => {
                         <ImagePlay className="w-5 h-5 cursor-pointer" />
                         <Sparkles className="w-5 h-5 cursor-pointer" />
                         <Smile className="w-5 h-5 cursor-pointer" />
-                        <CalendarClock className="w-5 h-5 cursor-pointer" />
+                        <CalendarClock className="w-5 h-5 cursor-pointer md:block hidden" />
                         <MapPin className="w-5 h-5 cursor-pointer" />
-                        <Flag className="w-5 h-5 cursor-pointer" />
+                        <Flag className="w-5 h-5 cursor-pointer md:block hidden" />
 
                     </div>
                     <div className="flex items-center gap-2">
