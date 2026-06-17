@@ -8,7 +8,7 @@ import {
 const FeedHeader = () => {
   return (
 
-    <div className="sticky top-0 z-10 md:h-14 h-25 bg-background/60 backdrop-blur-md">
+    <div className="sticky top-0 z-10 md:h-14 h-29 bg-background/60 backdrop-blur-md">
         <div className="md:hidden pt-3 pl-3 flex">
             <MobileSidebar />
             <h5 className="pl-5 font-bold text-lg">Home</h5>

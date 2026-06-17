@@ -1,4 +1,4 @@
-import { Bell, Bookmark, Settings, Ellipsis, GitFork, Home, MessageCircle, Rocket, Search, UserPlus, UserRound } from "lucide-react";
+import { Bell, Bookmark, Settings, Ellipsis, GitFork, Home, MessageCircle, Rocket, Search, UserPlus, UserRound, LogOut } from "lucide-react";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "@/components/ui/button"
 import {
@@ -13,8 +13,23 @@ import Link from "next/link";
 export function AppSidebar() {
 
   return (
-    <div className='h-screen flex flex-col justify-between'>
-        <div className="mt-4 px-4">
+    <div className='h-screen flex flex-col md:justify-between justify-start'>
+        <div className="mt-4 px-4 md:hidden block">
+            <div>
+                <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                </Avatar>
+                <p className="text-lg font-bold pt-2">gozdelinko</p>
+                <p className="text-sm text-gray-800 dark:text-gray-500 tracking-wider">
+                    @gozdekosa
+                </p>
+            </div>
+            <div className="flex items-center gap-4 mt-2 mb-3 border-b dark:border-neutral-900 border-neutral-300 pb-3">
+                <div>22 <span className="text-gray-800 dark:text-gray-500">Following</span></div>
+                <div>100 <span className="text-gray-800 dark:text-gray-500">Followers</span></div>
+            </div>
+        </div>
+        <div className="mt-4 px-4 md:block hidden">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -81,10 +96,16 @@ export function AppSidebar() {
                     
                     </li>
                 </Link>
+
+                <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4 md:hidden block">
+                    <LogOut />
+                    <span className="text-xl">Log out</span>
+                </li>
+
             </ul>
-            <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2">Post</Button>
+            <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2 md:flex hidden">Post</Button>
         </div>
-        <div className="flex items-center pb-3">
+        <div className="flex items-center pb-3 md:block hidden">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                 <div className="flex items-center w-full cursor-pointer pb-3 px-4">
