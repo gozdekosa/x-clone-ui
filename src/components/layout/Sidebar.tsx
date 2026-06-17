@@ -9,6 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link";
+import { Dialog, DialogTrigger } from "../ui/dialog";
+import AddPost from "@/features/posts/components/AddPost";
 
 export function AppSidebar() {
 
@@ -103,7 +105,14 @@ export function AppSidebar() {
                 </li>
 
             </ul>
-            <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2 md:flex hidden">Post</Button>
+            <Dialog>
+                <form>
+                    <DialogTrigger asChild>
+                        <Button className="w-full rounded-4xl text-lg font-bold py-6 cursor-pointer mt-2 md:flex hidden">Post</Button>
+                    </DialogTrigger>
+                    <AddPost />
+                </form>
+            </Dialog>
         </div>
         <div className="flex items-center pb-3 md:block hidden">
             <DropdownMenu>
