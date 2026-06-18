@@ -5,31 +5,26 @@ export const useInfinitePosts = (totalPosts: number) => {
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (
-          entries[0].isIntersecting &&
-          visibleCount < totalPosts
-        ) {
-          setVisibleCount((prev) => prev + 10);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    setVisibleCount(10); // 🔥 posts değişince reset
+  }, [totalPosts]);
 
+  useEffect(() => {
     const current = loadMoreRef.current;
+    if (!current) return;
 
-    if (current) {
-      observer.observe(current);
-    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleCount((prev) => {
+          if (prev >= totalPosts) return prev;
+          return prev + 10;
+        });
+      }
+    }, { threshold: 0.1 });
 
-    return () => {
-      if (current) observer.unobserve(current);
-    };
-  }, [visibleCount, totalPosts]);
+    observer.observe(current);
 
-  return {
-    visibleCount,
-    loadMoreRef,
-  };
+    return () => observer.disconnect();
+  }, [totalPosts]);
+
+  return { visibleCount, loadMoreRef };
 };

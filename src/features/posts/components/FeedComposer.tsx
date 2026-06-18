@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { CalendarClock, Circle, CirclePlus, Earth, Flag, Image, ImagePlay, MapPin, Smile, Sparkles, X } from "lucide-react"
+import { CalendarClock, CirclePlus, Earth, Flag, Image, ImagePlay, MapPin, Smile, Sparkles } from "lucide-react"
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useRef, useState } from "react";
+import { usePostStore } from "../store/post-store";
 
 const MAX_LENGTH = 280;
 
@@ -11,6 +12,9 @@ const FeedComposer = () => {
   const [text, setText] = useState("");
   const remaining = MAX_LENGTH - text.length;
   const progress = Math.min(text.length / MAX_LENGTH, 1);
+
+  const [content, setContent] = useState("");
+  const addPost = usePostStore((state) => state.addPost);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -25,10 +29,12 @@ const FeedComposer = () => {
 
     el.style.height = "0px";
     el.style.height = el.scrollHeight + "px";
+
+    setContent(value);
   };
 
   return (
-    <div className="top-10 translate-y-0 dark:bg-black bg-white p-4 rounded-lg shadow-md border-b dark:border-neutral-900 border-neutral-300">
+    <div className="top-10 translate-y-0 dark:bg-black bg-white p-4 border-b dark:border-neutral-900 border-neutral-300">
         <div className="flex gap-2">
             <div>
                 <Avatar>
@@ -101,6 +107,12 @@ const FeedComposer = () => {
                     <CirclePlus className="w-5 h-5 cursor-pointer dark:text-neutral-400 text-neutral-800" />
 
                     <Button
+                        onClick={() => {
+                            if (!content.trim()) return;
+
+                            addPost(content);
+                            setContent("");
+                        }}
                         type="submit"
                         disabled={text.length === 0}
                         className="rounded-2xl px-4 py-4 font-bold bg-black dark:bg-white cursor-pointer"

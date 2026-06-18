@@ -8,5 +8,5 @@ export interface Post {
   reposts: number;
   likes: number;
   views: number;
-  createdAt: Date;
+  createdAt: number;
 }

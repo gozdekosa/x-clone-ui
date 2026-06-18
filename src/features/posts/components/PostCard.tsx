@@ -39,7 +39,7 @@ const PostCard = ({ post }: PostCardProps) => {
             <p className="font-bold text-md">
             {post.name}{" "}
             <span className="font-light dark:text-neutral-400 text-neutral-800">
-                @{post.username} · {formatPostDate(post.createdAt)}
+              @{post.username} · {formatPostDate(new Date(post.createdAt))}
             </span>
             </p>
         </div>

@@ -62,5 +62,5 @@ export const posts: Post[] = Array.from({ length: 50 }, (_, i) => ({
   reposts: 128 + (i % 300),
   likes: 2500 + (i % 10000),
   views: 15000 + (i % 100000),
-  createdAt: new Date(Date.now() - (i * 86400000)),
+  createdAt: new Date(Date.now() - (i * 86400000)).getTime(),
 }));
