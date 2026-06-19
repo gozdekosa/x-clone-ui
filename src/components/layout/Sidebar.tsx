@@ -46,62 +46,62 @@ export function AppSidebar() {
                 <Link href="/">
                     <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                         <Home />
-                        <span className="text-xl">Home</span>
+                        <span className="md:text-xl text-md">Home</span>
                     </li>
                 </Link>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Search />
-                    <span className="text-xl">Explore</span>
+                    <span className="md:text-xl text-md">Explore</span>
                 </li>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Bell />
-                    <span className="text-xl">Notifications</span>
+                    <span className="md:text-xl text-md">Notifications</span>
                 </li>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <UserPlus />
-                    <span className="text-xl">Follow</span>
+                    <span className="md:text-xl text-md">Follow</span>
                 </li>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <MessageCircle />
-                    <span className="text-xl">Chat</span>
+                    <span className="md:text-xl text-md">Chat</span>
                 </li>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <GitFork />
-                    <span className="text-xl">Grok</span>
+                    <span className="md:text-xl text-md">Grok</span>
                 </li>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Bookmark />
-                    <span className="text-xl">Bookmarks</span>
+                    <span className="md:text-xl text-md">Bookmarks</span>
                 </li>
 
                 <li className="hidden min-[1800px]:flex items-center gap-4 py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <Rocket />
-                    <span className="text-xl">Creator Studio</span>
+                    <span className="md:text-xl text-md">Creator Studio</span>
                 </li>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                     <UserRound />
-                    <span className="text-xl">Profile</span>
+                    <span className="md:text-xl text-md">Profile</span>
                 </li>
 
                 <Link href="/settings">
                     <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4">
                         
                         <Settings />
-                        <span className="text-xl">Settings</span>
+                        <span className="md:text-xl text-md">Settings</span>
                     
                     </li>
                 </Link>
 
                 <li className="flex items-center gap-4  py-3 rounded-full dark:hover:bg-neutral-900 hover:bg-neutral-300 cursor-pointer transition-colors px-4 md:hidden block">
                     <LogOut />
-                    <span className="text-xl">Log out</span>
+                    <span className="md:text-xl text-md">Log out</span>
                 </li>
 
             </ul>
