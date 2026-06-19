@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MobileBottomBar = () => {
     return (
-    <div className="md:hidden fixed bottom-1 left-0 right-0 bg-white dark:bg-black border-t border-neutral-300 dark:border-neutral-700 z-50">
+    <div className="md:hidden fixed bottom-0.5 left-0 right-0 bg-white dark:bg-black border-t border-neutral-300 dark:border-neutral-700 z-50">
         <div className="max-w-2xl mx-auto px-3">
             <div className="flex justify-between items-center px-4 py-4">
                 <div className="flex flex-col items-center">

@@ -27,7 +27,20 @@ const AddPost = () => {
             </button>
         </DialogClose>
           <DialogHeader className="text-end">
-            <DialogTitle className="text-emerald-500 font-bold">Drafts</DialogTitle>
+            <DialogTitle className="text-emerald-500 font-bold">
+                Drafts
+                <Button 
+                onClick={() => {
+                    if (!content.trim()) return;
+
+                    addPost(content);
+                    setContent("");
+                }}
+                type="submit" className="rounded-2xl px-4 py-4 font-bold bg-black dark:bg-white cursor-pointer md:hidden inline-flex ml-4">
+                Post
+            </Button>
+            </DialogTitle>
+            
           </DialogHeader>
           <DialogDescription className="sr-only">
             Post oluşturma modalı
@@ -74,7 +87,7 @@ const AddPost = () => {
                             addPost(content);
                             setContent("");
                         }}
-                        type="submit" className="rounded-2xl px-4 py-4 font-bold bg-black dark:bg-white cursor-pointer">
+                        type="submit" className="rounded-2xl px-4 py-4 font-bold bg-black dark:bg-white cursor-pointer md:block hidden">
                         Post
                     </Button>
                 </div>
