@@ -13,15 +13,12 @@ const FeedComposer = () => {
   const remaining = MAX_LENGTH - text.length;
   const progress = Math.min(text.length / MAX_LENGTH, 1);
 
-  const [content, setContent] = useState("");
   const addPost = usePostStore((state) => state.addPost);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
 
     if (value.length > MAX_LENGTH) return;
-
-    setText(value);
 
     // auto resize
     const el = ref.current;
@@ -30,7 +27,7 @@ const FeedComposer = () => {
     el.style.height = "0px";
     el.style.height = el.scrollHeight + "px";
 
-    setContent(value);
+    setText(value);
   };
 
   return (
@@ -108,10 +105,10 @@ const FeedComposer = () => {
 
                     <Button
                         onClick={() => {
-                            if (!content.trim()) return;
+                            if (!text.trim()) return;
 
-                            addPost(content);
-                            setContent("");
+                            addPost(text);
+                            setText("");
                         }}
                         type="submit"
                         disabled={text.length === 0}

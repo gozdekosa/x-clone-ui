@@ -8,6 +8,7 @@ import FeedHeader from "./FeedHeader";
 import FeedComposer from "./FeedComposer";
 import LoadMore from "./LoadMore";
 import FeedSkeleton from "./FeedSkeleton";
+import Link from "next/link";
 
 const Feed = () => {
   const { posts, isLoading } = usePosts();
@@ -30,7 +31,9 @@ const Feed = () => {
             <FeedComposer />
 
             {visiblePosts.map((post) => (
-              <PostCard key={post.id} post={post} />
+              <Link key={post.id} href={`/post/${post.id}`}>
+                <PostCard key={post.id} post={post} />
+              </Link>
             ))}
 
             <LoadMore

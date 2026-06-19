@@ -1,11 +1,18 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { Post } from "../types/post";
+import { Comment } from "../types/comment";
 
 interface PostStore {
   posts: Post[];
   likedPosts: number[];
   bookmarkedPosts: number[];
+  comments: Comment[];
+
+  addComment: (
+    postId: number,
+    content: string
+  ) => void;
 
   setPosts: (posts: Post[]) => void;
   addPost: (content: string) => void;
@@ -20,6 +27,7 @@ export const usePostStore = create<PostStore>()(
       likedPosts: [],
       bookmarkedPosts: [],
       posts: [],
+      comments: [],
 
       setPosts: (posts) => set({ posts }),
 
@@ -39,6 +47,24 @@ export const usePostStore = create<PostStore>()(
               createdAt: Date.now(),
             },
             ...state.posts,
+          ],
+      })),
+
+      addComment: (postId, content) =>
+        set((state) => ({
+          comments: [
+            {
+              id: Date.now(),
+              postId,
+              name: "Gözde",
+              username: "gozde",
+              avatar: "https://i.pravatar.cc/150?img=11",
+              likes: 10,
+              content,
+              createdAt: Date.now(),
+            },
+
+            ...state.comments,
           ],
       })),
 
@@ -62,6 +88,7 @@ export const usePostStore = create<PostStore>()(
         posts: state.posts,
         likedPosts: state.likedPosts,
         bookmarkedPosts: state.bookmarkedPosts,
+        comments: state.comments,
       }),
     }
   )

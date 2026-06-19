@@ -87,7 +87,7 @@ const AddPost = () => {
                             addPost(content);
                             setContent("");
                         }}
-                        type="submit" className="rounded-2xl px-4 py-4 font-bold bg-black dark:bg-white cursor-pointer md:block hidden">
+                        type="submit" className="rounded-2xl px-4 py-4 font-bold bg-black dark:bg-white cursor-pointer md:inline-flex hidden">
                         Post
                     </Button>
                 </div>
