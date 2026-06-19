@@ -59,8 +59,11 @@ export const usePostStore = create<PostStore>()(
               name: "Gözde",
               username: "gozde",
               avatar: "https://i.pravatar.cc/150?img=11",
-              likes: 10,
               content,
+              comments: 0,
+              likes: 10,
+              reposts: 0,
+              views: 0,
               createdAt: Date.now(),
             },
 
